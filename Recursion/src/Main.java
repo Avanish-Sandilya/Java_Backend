@@ -1,4 +1,5 @@
 class Main{
+    //code to find factorial
     public static int factorial(int num){
         if(num>1){
             return num*factorial(num-1);
@@ -6,6 +7,7 @@ class Main{
         return 1;
     }
 
+    //code to find fib number
     public static int fib(int num){
        if(num==1||num==0){
            return num;
@@ -13,6 +15,7 @@ class Main{
        return fib(num-1)+fib(num-2);
     }
 
+    //code to find sum of first n natural numbers
     public static int sumOfN(int num){
         if(num==0){
             return num;
