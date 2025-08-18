@@ -23,10 +23,20 @@ class Main{
         return num+sumOfN(num-1);
     }
 
+   //power of a number
+
+    public static int power(int num,int pow){
+        if(pow ==0){
+            return 1;
+        }
+        return num*power(num,pow-1);
+    }
+
 
     public static void main(String[] args) {
         System.out.println(factorial(5));
         System.out.println(fib(7));
         System.out.println(sumOfN(5));
+        System.out.println(power(5,3));
     }
 }
