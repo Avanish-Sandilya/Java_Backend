@@ -13,9 +13,17 @@ class Main{
        return fib(num-1)+fib(num-2);
     }
 
+    public static int sumOfN(int num){
+        if(num==0){
+            return num;
+        }
+        return num+sumOfN(num-1);
+    }
+
 
     public static void main(String[] args) {
         System.out.println(factorial(5));
         System.out.println(fib(7));
+        System.out.println(sumOfN(5));
     }
 }
