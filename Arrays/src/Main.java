@@ -27,6 +27,17 @@ public class Main {
         return -1;
     }
 
+    //finding single missing value in sorted list of first n natural numbers
+    public static int singleMissingSorted(int[] arr){
+        int start = 1;
+        int end = arr[arr.length-1];
+        int sum=0;
+        for(int x:arr){
+            sum+=x;
+        }
+        return ((end*(end+1))/2)-sum;
+    }
+
 
     public static void main(String[] args) {
         int linear = linearSearch(new int[]{7,9,3,4,11,2,1},4);
@@ -34,5 +45,8 @@ public class Main {
 
         int binary = binarySearch(new int[]{1,2,3,4,5,6,7,8,9},5);
         System.out.println(binary==-1?"element not found":"element found at index: "+binary);
+
+        int singleMissingSorted = singleMissingSorted(new int[]{1,2,3,4,5,6,7,8,9});
+        System.out.println(singleMissingSorted==0?"no element missing":"missing element is: "+singleMissingSorted);
     }
 }
