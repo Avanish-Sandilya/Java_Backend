@@ -32,11 +32,22 @@ class Main{
         return num*power(num,pow-1);
     }
 
+    //Tree recursion
+
+    public static void treeRecursion(int num){
+        if(num>0){
+            System.out.println(num);
+            treeRecursion(num-1);
+            treeRecursion(num-1);
+        }
+    }
+
 
     public static void main(String[] args) {
-        System.out.println(factorial(5));
-        System.out.println(fib(7));
-        System.out.println(sumOfN(5));
-        System.out.println(power(5,3));
+//        System.out.println(factorial(5));
+//        System.out.println(fib(7));
+//        System.out.println(sumOfN(5));
+//        System.out.println(power(5,3));
+          treeRecursion(3);
     }
 }
