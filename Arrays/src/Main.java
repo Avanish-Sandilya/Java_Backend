@@ -38,6 +38,20 @@ public class Main {
         return ((end*(end+1))/2)-sum;
     }
 
+    //finding single missing in sorted n natural numbers
+    public static int singleMissingSortedNatural(int[] arr){
+        int low = arr[0];
+
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]-i!=low){
+                return i+low;
+            }
+        }
+        return -1;
+    }
+
+
+
 
     public static void main(String[] args) {
         int linear = linearSearch(new int[]{7,9,3,4,11,2,1},4);
@@ -48,5 +62,10 @@ public class Main {
 
         int singleMissingSorted = singleMissingSorted(new int[]{1,2,3,4,5,6,7,8,9});
         System.out.println(singleMissingSorted==0?"no element missing":"missing element is: "+singleMissingSorted);
+
+        int singleMissingSortedNatural = singleMissingSortedNatural(new int[]{3,4,5,6,7,9,10,11});
+        System.out.println(singleMissingSortedNatural==-1?"no element missing":"missing element is: "+singleMissingSortedNatural);
+
+
     }
 }
