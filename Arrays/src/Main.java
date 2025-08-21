@@ -1,26 +1,26 @@
 public class Main {
     //linear search
-    public static int linearSearch(int[] arr, int key){
-       for(int i=0; i<arr.length;i++){
-           if(arr[i]==key){
-               return i;
-           }
-       }
-       return -1;
+    public static int linearSearch(int[] arr, int key) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == key) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     //binary search
-    public static int binarySearch(int[] arr,int key){
-        int low=0;
-        int high=arr.length-1;
-        while(high>low){
-            int mid = (high+low)/2;
-            if(arr[mid]==key){
+    public static int binarySearch(int[] arr, int key) {
+        int low = 0;
+        int high = arr.length - 1;
+        while (high > low) {
+            int mid = (high + low) / 2;
+            if (arr[mid] == key) {
                 return mid;
-            } else if (key>mid) {
-                low=mid+1;
-            }else{
-                high=mid-1;
+            } else if (key > mid) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
             }
         }
 
@@ -28,43 +28,41 @@ public class Main {
     }
 
     //finding single missing value in sorted list of first n natural numbers
-    public static int singleMissingSorted(int[] arr){
+    public static int singleMissingSorted(int[] arr) {
         int start = 1;
-        int end = arr[arr.length-1];
-        int sum=0;
-        for(int x:arr){
-            sum+=x;
+        int end = arr[arr.length - 1];
+        int sum = 0;
+        for (int x : arr) {
+            sum += x;
         }
-        return ((end*(end+1))/2)-sum;
+        return ((end * (end + 1)) / 2) - sum;
     }
 
     //finding single missing in sorted n natural numbers
-    public static int singleMissingSortedNatural(int[] arr){
+    public static int singleMissingSortedNatural(int[] arr) {
         int low = arr[0];
 
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]-i!=low){
-                return i+low;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] - i != low) {
+                return i + low;
             }
         }
         return -1;
     }
 
 
-
-
     public static void main(String[] args) {
-        int linear = linearSearch(new int[]{7,9,3,4,11,2,1},4);
-        System.out.println(linear==-1?"element not found":"element found at index: "+linear);
+        int linear = linearSearch(new int[]{7, 9, 3, 4, 11, 2, 1}, 4);
+        System.out.println(linear == -1 ? "element not found" : "element found at index: " + linear);
 
-        int binary = binarySearch(new int[]{1,2,3,4,5,6,7,8,9},5);
-        System.out.println(binary==-1?"element not found":"element found at index: "+binary);
+        int binary = binarySearch(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, 5);
+        System.out.println(binary == -1 ? "element not found" : "element found at index: " + binary);
 
-        int singleMissingSorted = singleMissingSorted(new int[]{1,2,3,4,5,6,7,8,9});
-        System.out.println(singleMissingSorted==0?"no element missing":"missing element is: "+singleMissingSorted);
+        int singleMissingSorted = singleMissingSorted(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9});
+        System.out.println(singleMissingSorted == 0 ? "no element missing" : "missing element is: " + singleMissingSorted);
 
-        int singleMissingSortedNatural = singleMissingSortedNatural(new int[]{3,4,5,6,7,9,10,11});
-        System.out.println(singleMissingSortedNatural==-1?"no element missing":"missing element is: "+singleMissingSortedNatural);
+        int singleMissingSortedNatural = singleMissingSortedNatural(new int[]{3, 4, 5, 6, 7, 9, 10, 11});
+        System.out.println(singleMissingSortedNatural == -1 ? "no element missing" : "missing element is: " + singleMissingSortedNatural);
 
 
     }
