@@ -14,8 +14,17 @@ public class SpeedConverter {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter value in Miles");
-        //getting user input
-        double valueInMiles=input.nextDouble();
-        System.out.println(milesToKm(valueInMiles));
+
+
+        //validating user input
+        if(input.hasNextDouble()){
+            //getting user input
+            double valueInMiles=input.nextDouble();
+            System.out.println(milesToKm(valueInMiles));
+
+        }else{
+            System.out.println("Invalid input");
+        }
+
     }
 }
