@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class SpeedConverter {
 
     public static double milesToKm(double miles){
+        //to limit output to 4 decimal points
         DecimalFormat df = new DecimalFormat("#.####");
         double oneMileInKm=1.60934;
         double solution= miles * oneMileInKm;
@@ -13,6 +14,7 @@ public class SpeedConverter {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter value in Miles");
+        //getting user input
         double valueInMiles=input.nextDouble();
         System.out.println(milesToKm(valueInMiles));
     }
