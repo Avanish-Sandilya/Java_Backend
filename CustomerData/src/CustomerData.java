@@ -9,14 +9,13 @@ public class CustomerData {
         this.email = email;
     }
 
-    public CustomerData(){
-        this("User",200000,"userMail@mailprovider.com");
+    public CustomerData() {
+        this("User", 200000, "userMail@mailprovider.com");
     }
 
-    public CustomerData(double creditLimit){
-        this("User",creditLimit,"defaultmail@mailprovider.com");
+    public CustomerData(double creditLimit) {
+        this("User", creditLimit, "defaultmail@mailprovider.com");
     }
-
 
 
     public String getName() {
