@@ -35,7 +35,9 @@ public class Wall {
         return width;
     }
 
-    public double area(){
+    public double getArea(){
         return this.getHeight()*this.getWidth();
     }
+
+
 }
