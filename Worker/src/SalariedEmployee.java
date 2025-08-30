@@ -16,8 +16,16 @@ public class SalariedEmployee extends Employee{
         return isRetired;
     }
 
-    public boolean retire(){
-        int yearOfBirth = Integer.parseInt(getBirthDate().substring(5));
-        return 2025-yearOfBirth>=60;
+    public boolean isEligibleForRetirement() {
+        int yearOfBirth = Integer.parseInt(getBirthDate().substring(6));
+        int currentYear = java.time.LocalDate.now().getYear();
+        return currentYear - yearOfBirth >= 60;
     }
+
+    public void retire() {
+        if (isEligibleForRetirement()) {
+            this.isRetired = true;
+        }
+    }
+
 }
