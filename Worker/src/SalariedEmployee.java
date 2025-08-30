@@ -5,7 +5,6 @@ public class SalariedEmployee extends Employee{
     public SalariedEmployee(String name, String birthDate, String contractEndDate, long employeeId, String hireDate, double annualSalary, boolean isRetired) {
         super(name, birthDate, contractEndDate, employeeId, hireDate);
         this.annualSalary = annualSalary;
-        this.isRetired = isRetired;
     }
 
     public double getAnnualSalary() {
