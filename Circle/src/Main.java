@@ -8,5 +8,6 @@ public class Main {
         System.out.println("cylinder.height= " + cylinder.getHeight());
         System.out.println("cylinder.area= " + cylinder.getArea());
         System.out.println("cylinder.volume= " + cylinder.getVolume());
+        System.out.printf("cylinder.volume= %.2f",cylinder.getVolume());
     }
 }
