@@ -10,7 +10,7 @@ public class Drink {
     }
 
     private void setPrice(){
-        this.price=this.size.equalsIgnoreCase("large")?20:(this.size.equals("medium")?15:10);
+        this.price=this.size.equalsIgnoreCase("large")?2.0:(this.size.equals("medium")?1.5:1.0);
     }
 
     @Override
