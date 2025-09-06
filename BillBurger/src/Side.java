@@ -16,7 +16,7 @@ public class Side {
     }
 
     private void setPrice(){
-        this.price=this.type.equals("fries")?5:8;
+        this.price= this.type.equalsIgnoreCase("fries")?5:8;
     }
 
     @Override
