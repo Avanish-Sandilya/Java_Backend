@@ -8,11 +8,20 @@ public class CreateMeal {
     private Side side;
     private List<Topping> toppingList;
 
+    private static final int MAX_TOPPINGS = 5;
+
     public CreateMeal(Burger burger, Drink drink, Side side, List<Topping> toppings) {
         this.burger = burger;
         this.drink = drink;
         this.side = side;
-        this.toppingList = toppings;
+        this.toppingList = new ArrayList<>();
+
+        if (toppings.size() > MAX_TOPPINGS) {
+            this.toppingList.addAll(toppings.subList(0, MAX_TOPPINGS)); // take only first 5
+            System.out.println("Can only add upto 5 toppings");
+        } else {
+            this.toppingList.addAll(toppings);
+        }
     }
 
     public CreateMeal(){
@@ -29,6 +38,17 @@ public class CreateMeal {
 
     public CreateMeal(Burger burger,Drink drink,Side side){
         this(burger,drink,side,new ArrayList<>(List.of(new Topping("Cheese"))));
+    }
+
+    @Override
+    public String toString() {
+        return "CreateMeal{" +
+                "burger=" + burger +
+                ", drink=" + drink +
+                ", side=" + side +
+                ", toppingList=" + toppingList +
+                "Total=" + calculateTotalBill()+
+                '}';
     }
 
     public double calculateTotalBill(){
