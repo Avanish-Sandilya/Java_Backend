@@ -6,14 +6,17 @@ public class Main {
         // 1. Default meal
         CreateMeal meal1 = new CreateMeal();
         System.out.println("Default meal:\n" + meal1);
+        System.out.println("=============================================================");
 
         // 2. Meal with only Burger provided
         CreateMeal meal2 = new CreateMeal(new Burger("large"));
         System.out.println("\nMeal with only Burger:\n" + meal2);
+        System.out.println("=============================================================");
 
         // 3. Meal with Burger + Drink
         CreateMeal meal3 = new CreateMeal(new Burger("medium"), new Drink("sprite", "large"));
         System.out.println("\nMeal with Burger + Drink:\n" + meal3);
+        System.out.println("=============================================================");
 
         // 4. Meal with Burger + Drink + Side
         CreateMeal meal4 = new CreateMeal(new Burger("large"), new Drink("fanta", "medium"), new Side("salad"));
