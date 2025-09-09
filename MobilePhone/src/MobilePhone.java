@@ -33,13 +33,11 @@ public class MobilePhone {
         return true;
     }
 
-    public boolean removeContact(Contact contact) {
+    public void removeContact(Contact contact) {
         if (myContacts.remove(contact)) {
             System.out.println("Removal successful");
-            return true;
         } else {
             System.out.println("No such contact exists");
-            return false;
         }
     }
 
