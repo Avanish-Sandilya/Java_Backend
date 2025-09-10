@@ -35,7 +35,9 @@ public class MobilePhone {
 
     public void removeContact(Contact contact) {
         if (myContacts.remove(contact)) {
+
             System.out.println("Removal successful");
+
         } else {
             System.out.println("No such contact exists");
         }
