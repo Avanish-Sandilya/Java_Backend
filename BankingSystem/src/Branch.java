@@ -18,18 +18,18 @@ public class Branch {
     }
 
    public boolean newCustomer(String name,double transaction){
-        for(var v:customers){
+
             if(findCustomer(name)){
                 return false;
             }
-        }
+
         customers.add(new Customer(name,transaction));
         return true;
    }
 
    public boolean addCustomerTransaction(String name,double transaction){
         for(var v:customers){
-            if(findCustomer(name)){
+            if(v.getName().equalsIgnoreCase(name)){
                 v.addTransaction(transaction);
                 return true;
             }
