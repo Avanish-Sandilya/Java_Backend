@@ -1,56 +1,56 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Branch {
-    private String name;
-    private ArrayList<Customer> customers;
+    private final String name;
+    private final ArrayList<Customer> customers;
 
-    public ArrayList<Customer> getCustomers() {
-        return customers;
+    public Branch(String name) {
+        this.name = name;
+        this.customers = new ArrayList<>();
     }
 
     public String getName() {
         return name;
     }
 
-    public Branch(String name) {
-        this.name = name;
-        this.customers=new ArrayList<Customer>();
+    public List<Customer> getCustomers() {
+        // Return a copy to protect internal list
+        return new ArrayList<>(customers);
     }
 
-   public boolean newCustomer(String name,double transaction){
-
-            if(findCustomer(name)){
-                return false;
-            }
-
-        customers.add(new Customer(name,transaction));
+    public boolean newCustomer(String name, double transaction) {
+        if (findCustomer(name) != null) {
+            return false;
+        }
+        customers.add(new Customer(name, transaction));
         return true;
-   }
+    }
 
-   public boolean addCustomerTransaction(String name,double transaction){
-        for(var v:customers){
-            if(v.getName().equalsIgnoreCase(name)){
-                v.addTransaction(transaction);
-                return true;
-            }
+    public boolean addCustomerTransaction(String name, double transaction) {
+        Customer customer = findCustomer(name);
+        if (customer != null) {
+            customer.addTransaction(transaction);
+            return true;
         }
         return false;
-   }
+    }
+
+    private Customer findCustomer(String name) {
+        for (Customer c : customers) {
+            if (c.getName().equalsIgnoreCase(name)) {
+                return c;
+            }
+        }
+        return null;
+    }
 
     @Override
     public String toString() {
-        ArrayList<String> names= new ArrayList<>();
-        for (var v:customers){
-            names.add( v.getName());
+        List<String> names = new ArrayList<>();
+        for (Customer c : customers) {
+            names.add(c.getName());
         }
-        return names.toString();
+        return "Branch{name='" + name + "', customers=" + names + "}";
     }
-
-    public boolean findCustomer(String name){
-        for(var v:customers){
-            if(v.getName().equalsIgnoreCase(name)) return true;
-        }
-        return false;
-   }
-
 }

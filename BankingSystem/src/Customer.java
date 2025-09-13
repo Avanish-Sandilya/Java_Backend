@@ -3,34 +3,29 @@ import java.util.List;
 
 public class Customer {
 
-    private String name;
-    private ArrayList<Double>transactions;
+    private final String name;
+    private final ArrayList<Double> transactions;
 
     public Customer(String name, double initialTransaction) {
         this.name = name;
         this.transactions = new ArrayList<>(List.of(initialTransaction));
     }
 
-    public String getName(){
-        return this.name;
+    public String getName() {
+        return name;
     }
 
-    public ArrayList<Double> getTransactions(){
-        return this.transactions;
+    public List<Double> getTransactions() {
+        // return as List to avoid exposing internal ArrayList for modification
+        return new ArrayList<>(transactions);
     }
 
-    public void addTransaction(double transaction){
-        this.transactions.add(transaction);
+    public void addTransaction(double transaction) {
+        transactions.add(transaction);
     }
-
-
-
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "name='" + name + '\'' +
-                ", transactions=" + transactions +
-                '}';
+        return "Customer{name='" + name + "', transactions=" + transactions + '}';
     }
 }
