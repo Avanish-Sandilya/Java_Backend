@@ -21,6 +21,18 @@ public class Bank {
     public boolean addCustomer(String branchName,String customerName,double transaction){
         for(var v:branches){
             if(v.getName().equalsIgnoreCase(branchName)){
+                if(!v.findCustomer(customerName)){
+                    v.newCustomer(customerName,transaction);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean addCustomerTransaction(String branchName,String customerName,double transaction){
+        for(var v:branches){
+            if(v.getName().equalsIgnoreCase(branchName)){
                 if(v.findCustomer(customerName)){
                     v.addCustomerTransaction(customerName,transaction);
                     return true;
@@ -31,12 +43,21 @@ public class Bank {
     }
 
     public boolean listCustomers(String name,boolean printTransactions){
-        for(var v:branches){
-            if(v.getName().equalsIgnoreCase(name)){
-                System.out.println(v.getCustomers().toString());
-                return true;
+        if(printTransactions){
+            for(var v:branches){
+                if(v.getName().equalsIgnoreCase(name)){
+                    System.out.println(v.getCustomers().toString());
+                    return true;
+                }
+            }
+        }else{
+            for(var v:branches){
+                if(v.getName().equalsIgnoreCase(name)){
+                    System.out.println(v.toString());
+                }
             }
         }
+
         return false;
     }
 

@@ -37,7 +37,16 @@ public class Branch {
         return false;
    }
 
-   public boolean findCustomer(String name){
+    @Override
+    public String toString() {
+        ArrayList<String> names= new ArrayList<>();
+        for (var v:customers){
+            names.add( v.getName());
+        }
+        return names.toString();
+    }
+
+    public boolean findCustomer(String name){
         for(var v:customers){
             if(v.getName().equalsIgnoreCase(name)) return true;
         }
