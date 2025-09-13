@@ -37,7 +37,7 @@ public class Branch {
         return false;
    }
 
-   private boolean findCustomer(String name){
+   public boolean findCustomer(String name){
         for(var v:customers){
             if(v.getName().equalsIgnoreCase(name)) return true;
         }
