@@ -22,4 +22,6 @@ public class Customer {
     public void addTransaction(double transaction){
         this.transactions.add(transaction);
     }
+
+
 }
