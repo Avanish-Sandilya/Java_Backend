@@ -16,7 +16,7 @@ public class Main {
             DaysOfWeek dayEnum = DaysOfWeek.valueOf(day);
             return dayEnum.getPrice();
         }catch (Exception e){
-            System.out.println(e+"\n Invalid input");
+            System.out.println(e+"\nInvalid input");
             return 0;
         }
 
