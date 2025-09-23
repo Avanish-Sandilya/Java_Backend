@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-
+        System.out.println(isArmStrongNumber(153));
+        System.out.println(isArmStrongNumber(253));
     }
 
     private static boolean isArmStrongNumber(int n){
