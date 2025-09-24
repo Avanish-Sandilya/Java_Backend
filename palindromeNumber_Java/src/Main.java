@@ -6,6 +6,7 @@ public class Main {
         System.out.println(isPalindrome(24));
 
     }
+
     private static boolean isPalindrome(int n){
         String num=String.valueOf(n);
         int start = 0;
