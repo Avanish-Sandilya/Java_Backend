@@ -1,8 +1,8 @@
 public abstract class ProductForSale {
 
-    private String type;
-    private String description;
-    private double price;
+    private final String type;
+    private final String description;
+    private final double price;
 
 
     public ProductForSale(String type, String description, double price) {
