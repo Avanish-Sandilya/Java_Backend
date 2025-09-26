@@ -16,8 +16,12 @@ public abstract class ProductForSale {
     }
 
     public void printPricedItem(int quantity){
-        System.out.printf("Product type: %s, quantity: %d, price: %s, total: %f\n",this.type,quantity,this.price,getSalesPrice(quantity));
+        System.out.printf("Product type: %s, quantity: %d, price: %s, total: %.2f\n",this.type,quantity,this.price,getSalesPrice(quantity));
     }
+
+    public String getType() { return type; }
+    public String getDescription() { return description; }
+    public double getPrice() { return price; }
 
     public abstract void showDetails();
 
