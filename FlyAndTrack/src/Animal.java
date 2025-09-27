@@ -1,2 +1,5 @@
-public abstract class Animal {
+public abstract class Animal implements FlightEnabled,Trackable {
+
+    abstract void move() ;
+
 }
