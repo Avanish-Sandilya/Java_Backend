@@ -14,7 +14,6 @@ public class Bird extends Animal{
     public void fly() {
         System.out.println("In flight");
     }
-
     @Override
     public void land() {
         System.out.println("Sat on a tree");
