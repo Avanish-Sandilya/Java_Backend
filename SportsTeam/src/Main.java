@@ -14,6 +14,7 @@ public class Main {
         SportsTeam astros2 = new SportsTeam("Houston Astros");
         scoreResult(phillies2, 3, astros2, 5);
 
+
         Team<BaseballPlayer> phillies = new Team<>("Philadelphia Phillies");
         Team<BaseballPlayer> astros = new Team<>("Houston Astros");
         scoreResult(phillies, 3, astros, 5);
