@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Team<T extends Player> {
 
-    private String name;
-    private List<T> players;
+    private final String name;
+    private final List<T> players=new ArrayList<>();
     private int won;
     private int lost;
 

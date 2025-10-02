@@ -1,2 +1,2 @@
-public record Player(String name) {
+public interface Player {
 }
