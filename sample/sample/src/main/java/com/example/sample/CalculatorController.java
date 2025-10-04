@@ -23,4 +23,14 @@ public class CalculatorController {
         return calculatorService.subtract(a, b);
     }
 
+    @GetMapping("/mul")
+    public int multiply(@RequestParam int a,@RequestParam int b){
+        return calculatorService.multiply(a,b);
+    }
+
+    @GetMapping("/div")
+    public int divide(@RequestParam int a,@RequestParam int b){
+        return calculatorService.divide(a,b);
+    }
+
 }
