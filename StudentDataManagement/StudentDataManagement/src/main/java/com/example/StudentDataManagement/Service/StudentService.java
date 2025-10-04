@@ -21,7 +21,7 @@ public class StudentService {
         return new StudentResponse(saved.getId(),name,age,email,grade);
     }
 
-    public String deleteStudentRecord(Long id) throws Exception {
+    public String deleteStudentRecord(Long id)  {
         try{
             studentRepository.deleteById(id);
             return "Record deleted";
