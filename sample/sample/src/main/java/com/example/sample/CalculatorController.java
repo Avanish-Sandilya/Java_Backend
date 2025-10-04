@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/calc")
 public class CalculatorController {
@@ -31,6 +33,11 @@ public class CalculatorController {
     @GetMapping("/div")
     public int divide(@RequestParam int a,@RequestParam int b){
         return calculatorService.divide(a,b);
+    }
+
+    @GetMapping("/history")
+    public List<Calculation> getHistory() {
+        return calculatorService.getHistory();
     }
 
 }
