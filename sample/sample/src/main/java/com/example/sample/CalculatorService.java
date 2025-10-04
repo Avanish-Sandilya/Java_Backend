@@ -11,27 +11,28 @@ public class CalculatorService {
     @Autowired
     private CalculationRepository calculationRepository;
 
-    public int add(int a,int b){
+
+    public CalculationResponse add(int a,int b){
         int result = a + b;
         calculationRepository.save(new Calculation(a, b, "add", result));
-        return result;
+        return new CalculationResponse(a,b,"add",result);
     }
-    public int subtract(int a,int b){
+    public CalculationResponse subtract(int a,int b){
         int result = a - b;
         calculationRepository.save(new Calculation(a, b, "subtract", result));
-        return result;
+        return new CalculationResponse(a,b,"subtract",result);
     }
 
-    public int multiply(int a,int b){
+    public CalculationResponse multiply(int a,int b){
         int result = a * b;
         calculationRepository.save(new Calculation(a, b, "multiply", result));
-        return result;
+        return new CalculationResponse(a,b,"multiply",result);
     }
 
-    public int divide(int a, int b){
+    public CalculationResponse divide(int a, int b){
         int result = a / b;
         calculationRepository.save(new Calculation(a, b, "divide", result));
-        return result;
+        return new CalculationResponse(a,b,"divide",result);
     }
 
     public List<Calculation> getHistory() {
