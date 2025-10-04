@@ -13,22 +13,22 @@ public class CalculatorController {
     @Autowired
     private CalculatorService calculatorService;
 
-    @GetMapping("/add")
+    @PostMapping("/add")
     public CalculationResponse add(@RequestBody @Valid calculationRequest request){
         return calculatorService.add(request.getA(), request.getB());
     }
 
-    @GetMapping("/sub")
+    @PostMapping("/sub")
     public CalculationResponse subtract(@RequestBody @Valid calculationRequest request) {
         return calculatorService.subtract(request.getA(), request.getB());
     }
 
-    @GetMapping("/mul")
+    @PostMapping("/mul")
     public CalculationResponse multiply(@RequestBody @Valid calculationRequest request){
         return calculatorService.multiply(request.getA(), request.getB());
     }
 
-    @GetMapping("/div")
+    @PostMapping("/div")
     public CalculationResponse divide(@RequestBody @Valid calculationRequest request){
         if(request.getB()==0){
             throw new IllegalArgumentException("Division by zero is not allowed");
