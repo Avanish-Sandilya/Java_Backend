@@ -1,5 +1,8 @@
-package com.example.sample;
+package com.example.sample.Service;
 
+import com.example.sample.DTO.CalculationResponse;
+import com.example.sample.Entity.Calculation;
+import com.example.sample.Entity.CalculationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +15,7 @@ public class CalculatorService {
     private CalculationRepository calculationRepository;
 
 
-    public CalculationResponse add(int a,int b){
+    public CalculationResponse add(int a, int b){
         int result = a + b;
         calculationRepository.save(new Calculation(a, b, "add", result));
         return new CalculationResponse(a,b,"add",result);

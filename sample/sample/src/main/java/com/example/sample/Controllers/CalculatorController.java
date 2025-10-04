@@ -1,5 +1,9 @@
-package com.example.sample;
+package com.example.sample.Controllers;
 
+import com.example.sample.Entity.Calculation;
+import com.example.sample.DTO.CalculationResponse;
+import com.example.sample.Service.CalculatorService;
+import com.example.sample.DTO.calculationRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

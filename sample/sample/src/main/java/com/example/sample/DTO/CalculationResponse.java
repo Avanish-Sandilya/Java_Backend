@@ -1,4 +1,4 @@
-package com.example.sample;
+package com.example.sample.DTO;
 
 public class CalculationResponse {
     private int a;

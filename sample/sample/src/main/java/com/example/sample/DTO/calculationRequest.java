@@ -1,4 +1,4 @@
-package com.example.sample;
+package com.example.sample.DTO;
 
 import org.antlr.v4.runtime.misc.NotNull;
 
