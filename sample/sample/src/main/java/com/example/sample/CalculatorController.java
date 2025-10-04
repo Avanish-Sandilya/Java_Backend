@@ -1,10 +1,7 @@
 package com.example.sample;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,23 +13,26 @@ public class CalculatorController {
     private CalculatorService calculatorService;
 
     @GetMapping("/add")
-    public int add(@RequestParam int a,@RequestParam int b){
-        return calculatorService.add(a,b);
+    public int add(@RequestBody @jakarta.validation.Valid calculationRequest request){
+        return calculatorService.add(request.getA(), request.getB());
     }
 
     @GetMapping("/sub")
-    public int subtract(@RequestParam int a, @RequestParam int b) {
-        return calculatorService.subtract(a, b);
+    public int subtract(@RequestBody @jakarta.validation.Valid calculationRequest request) {
+        return calculatorService.subtract(request.getA(), request.getB());
     }
 
     @GetMapping("/mul")
-    public int multiply(@RequestParam int a,@RequestParam int b){
-        return calculatorService.multiply(a,b);
+    public int multiply(@RequestBody @jakarta.validation.Valid calculationRequest request){
+        return calculatorService.multiply(request.getA(), request.getB());
     }
 
     @GetMapping("/div")
-    public int divide(@RequestParam int a,@RequestParam int b){
-        return calculatorService.divide(a,b);
+    public int divide(@RequestBody @jakarta.validation.Valid calculationRequest request){
+        if(request.getB()==0){
+            throw new IllegalArgumentException("Division by zero is not allowed");
+        }
+        return calculatorService.divide(request.getA(), request.getB());
     }
 
     @GetMapping("/history")
