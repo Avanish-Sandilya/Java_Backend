@@ -17,8 +17,7 @@ public class Book implements Comparable<Book>{
 
     public Book(){}
 
-    public Book(Long id, String name, String authorName, int shelf) {
-        this.id = id;
+    public Book(String name, String authorName, int shelf) {
         this.name = name;
         this.authorName = authorName;
         this.shelf = shelf;
