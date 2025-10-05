@@ -33,7 +33,7 @@ public class LibraryService {
         return bookResponses;
     }
 
-    public int findBookLocation(String BookName,Long id){
+    public int findBookLocation(Long id){
             Book book = bookRepository.findById(id).orElse(null);
             return book==null?-1:book.getShelf();
     }
