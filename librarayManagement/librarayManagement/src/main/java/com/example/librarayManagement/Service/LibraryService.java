@@ -44,5 +44,33 @@ public class LibraryService {
                 :new BookResponse(book.getId(), book.getName(), book.getAuthorName(), book.getShelf());
     }
 
+    public String deleteBook(Long id){
+        BookResponse book = getBookById(id);
+        if(book.getId()!=-1){
+            bookRepository.deleteById(id);
+            return "Record deleted successfully";
+        }
+        return "No such record exists or record has already been deleted";
+    }
+
+    public BookResponse updateBookShelf(int shelf, Long id){
+        Book book = bookRepository.findById(id).orElse(null);
+        if (book == null) {
+            return new BookResponse((long) -1, null, null, 0);
+        }
+
+        book.setShelf(shelf);
+
+        Book updatedBook=bookRepository.save(book);
+
+        return new BookResponse(
+                updatedBook.getId(),
+                updatedBook.getName(),
+                updatedBook.getAuthorName(),
+                updatedBook.getShelf()
+        );
+
+    }
+
 
 }
