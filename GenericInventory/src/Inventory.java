@@ -12,12 +12,10 @@ public class  Inventory <T> {
         this.items = new ArrayList<>(items);
     }
 
-    public String addItem(T t){
+    public void addItem(T t){
         if(t!=null){
             items.add(t);
-            return "Item successfully added";
         }
-        return "cannot add null";
     }
 
     public void printItems(){

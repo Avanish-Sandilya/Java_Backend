@@ -7,6 +7,8 @@ public class Main {
         InventoryUtility.transferInventory(bookInventory,generalInventory);
         InventoryUtility.displayInventory(generalInventory);
         InventoryUtility.displayInventory(bookInventory);
+        bookInventory.printItems();
+        System.out.println(bookInventory.getItems());
 
     }
 }
