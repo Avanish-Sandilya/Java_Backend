@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-
+        System.out.println(isSorted(new int[]{20,70,50}));
+        System.out.println(isSorted(new int[]{20,50,70}));
     }
 
     private static boolean isSorted(int[] arr){
