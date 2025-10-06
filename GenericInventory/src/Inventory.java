@@ -1,11 +1,15 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class  Inventory <T> {
 
-    private List<T> items;
+    private final List<T> items;
+    public Inventory(){
+        this.items = new ArrayList<>();
+    }
 
     public Inventory(List<T> items) {
-        this.items = items;
+        this.items = new ArrayList<>(items);
     }
 
     public String addItem(T t){
