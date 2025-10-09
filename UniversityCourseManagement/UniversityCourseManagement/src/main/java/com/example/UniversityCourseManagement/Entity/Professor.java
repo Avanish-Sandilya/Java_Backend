@@ -9,6 +9,7 @@ public class Professor implements Comparable<Professor> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
     private String department;
     private String email;
