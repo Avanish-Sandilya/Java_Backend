@@ -1,5 +1,6 @@
 package com.example.UniversityCourseManagement.Service;
 
+import com.example.UniversityCourseManagement.DTO.StudentRequest;
 import com.example.UniversityCourseManagement.DTO.StudentResponse;
 import com.example.UniversityCourseManagement.Entity.Student;
 import com.example.UniversityCourseManagement.Repository.StudentRepository;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class StudentService extends BaseService<StudentResponse> {
+public class StudentService extends BaseService<StudentResponse, StudentRequest> {
     @Autowired
     private StudentRepository studentRepository;
 
@@ -23,10 +24,10 @@ public class StudentService extends BaseService<StudentResponse> {
     }
 
     @Override
-    public StudentResponse add(StudentResponse entity) {
+    public StudentResponse add(StudentRequest entity) {
         Student s = new Student(entity.getName(),entity.getAge(),entity.getEmail());
         studentRepository.save(s);
-        return entity;
+        return new StudentResponse(s.getId(),s.getName(),s.getAge(),s.getEmail());
     }
 
     @Override
@@ -36,7 +37,7 @@ public class StudentService extends BaseService<StudentResponse> {
             studentRepository.deleteById(id);
 
             return  "Record deleted:\n" +
-                    "Name: " + s.getId() + "\n" +
+                    "Id: " + s.getId() + "\n" +
                     "Name: " + s.getName() + "\n";
         }
         return "No such record exists";
