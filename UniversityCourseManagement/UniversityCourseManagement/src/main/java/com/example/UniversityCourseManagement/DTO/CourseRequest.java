@@ -6,7 +6,7 @@ public class CourseRequest {
 
     private String courseName;
     private String professorName;
-    private Enum<CREDITS> credit;
+    private CREDITS credit;
 
     public String getCourseName() {
         return courseName;
@@ -24,11 +24,11 @@ public class CourseRequest {
         this.professorName = professorName;
     }
 
-    public Enum<CREDITS> getCredit() {
+    public CREDITS getCredit() {
         return credit;
     }
 
-    public void setCredit(Enum<CREDITS> credit) {
+    public void setCredit(CREDITS credit) {
         this.credit = credit;
     }
 }
