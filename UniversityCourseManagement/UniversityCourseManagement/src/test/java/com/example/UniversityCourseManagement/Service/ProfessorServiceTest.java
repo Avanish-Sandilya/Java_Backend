@@ -28,9 +28,9 @@ class ProfessorServiceTest {
     @Test
     void testGetAllProfessors() {
         // Arrange (mock data)
-        Professor p1 = new Professor("Dr. John", "CS", "john@uni.com");
+        Professor p1 = new Professor("john@uni.com", "CS", "Dr. John");
         p1.setId(1L);
-        Professor p2 = new Professor("Dr. Smith", "Math", "smith@uni.com");
+        Professor p2 = new Professor("smith@uni.com", "Math", "Smith");
         p2.setId(2L);
 
         when(professorRepository.findAll()).thenReturn(List.of(p1, p2));

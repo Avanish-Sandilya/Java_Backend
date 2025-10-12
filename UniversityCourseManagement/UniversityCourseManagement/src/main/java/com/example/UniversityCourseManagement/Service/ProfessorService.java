@@ -22,7 +22,7 @@ public class ProfessorService extends BaseService<ProfessorResponse, ProfessorRe
 
     @Override
     public ProfessorResponse add(ProfessorRequest entity) {
-        Professor professor=new Professor(entity.getName(),entity.getDept(),entity.getEmail());
+        Professor professor=new Professor(entity.getEmail(),entity.getDept(),entity.getName());
         professorRepository.save(professor);
         return new ProfessorResponse(professor.getId(), professor.getName(), professor.getDepartment(), professor.getEmail());
     }
