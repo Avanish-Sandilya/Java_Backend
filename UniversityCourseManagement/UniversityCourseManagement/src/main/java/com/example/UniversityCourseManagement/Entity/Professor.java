@@ -59,4 +59,8 @@ public class Professor implements Comparable<Professor> {
         }
         return this.getDepartment().compareTo(other.getDepartment());
     }
+
+    public void setId(long l) {
+        this.id=l;
+    }
 }
