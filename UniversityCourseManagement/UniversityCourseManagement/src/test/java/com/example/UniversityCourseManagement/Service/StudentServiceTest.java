@@ -52,6 +52,7 @@ public class StudentServiceTest {
 
         StudentResponse response=studentService.add(s1);
 
+
         assertEquals("Mango",response.getName());
         assertEquals(5,response.getAge());
         verify(studentRepository,times(1)).save(any(Student.class));
