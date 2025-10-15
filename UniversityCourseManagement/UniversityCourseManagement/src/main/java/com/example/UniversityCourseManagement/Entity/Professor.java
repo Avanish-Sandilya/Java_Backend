@@ -55,7 +55,9 @@ public class Professor implements Comparable<Professor> {
     public int compareTo(Professor other) {
         int nameCompare=this.getName().compareTo(other.getName());
         if(nameCompare!=0){
+
             return nameCompare;
+
         }
         return this.getDepartment().compareTo(other.getDepartment());
     }
