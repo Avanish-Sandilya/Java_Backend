@@ -37,5 +37,8 @@ public class Main {
         people.sort((Comparator.comparing(p ->p.firstName)));
         System.out.println(people);
 
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        people.forEach(System.out::println);
+
     }
 }
