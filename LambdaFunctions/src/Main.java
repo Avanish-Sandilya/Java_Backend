@@ -40,5 +40,10 @@ public class Main {
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         people.forEach(System.out::println);
 
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        people.forEach((person)->{
+            System.out.println("First name is: "+person.firstName+" and last name is: "+person.lastName);
+        });
+
     }
 }
