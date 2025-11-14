@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.BinaryOperator;
 
 public class Main {
 
@@ -50,8 +51,8 @@ public class Main {
 
     }
 
-    public static <T> T calculator(Operation<T> function,T value1, T value2){
-        T result=function.operate(value1,value2);
+    public static <T> T calculator(BinaryOperator<T> function, T value1, T value2){
+        T result=function.apply(value1,value2);
         System.out.println("Result of operation: "+result);
         return result;
     }
