@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.BiConsumer;
 
 public class Main {
@@ -10,6 +12,10 @@ public class Main {
         process(firstValue[0],firstValue[1],p1);
         System.out.println("=============================");
         lengthBreadth.forEach(s->process(s[0],s[1],p1));
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++");
+        ArrayList<String> nato = new ArrayList<>(List.of("Alpha","Bravo","Charlie","Delta","Echo"));
+        nato.removeIf(s->s.startsWith("De"));
+        System.out.println(nato);
     }
 
     public static <T> void process(T t1, T t2, BiConsumer<T,T> consumer){
