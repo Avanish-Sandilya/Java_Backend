@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.function.Consumer;
+import java.util.function.UnaryOperator;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,5 +22,21 @@ public class Main {
         Consumer<String> printConcise=s->Arrays.asList(s.split(" ")).forEach(System.out::println);
         printConcise.accept(line);
 
+        System.out.println("====================================================");
+
+        UnaryOperator<String> everySecondCharacter=source->{
+            StringBuilder returnVal= new StringBuilder();
+            for(int i=0;i<source.length();i++){
+                if(i%2==1){
+                    returnVal.append(source.charAt(i));
+                }
+            }
+            return returnVal.toString();
+        };
+
+        System.out.println(everySecondCharacter.apply(line));
+
     }
+
+
 }
