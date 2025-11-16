@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
 public class Main {
@@ -35,6 +36,12 @@ public class Main {
         };
 
         System.out.println(everySecondCharacter.apply(line));
+
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+        Supplier<String> val = ()->"I love Java";
+
+        String iLoveJava= val.get();
+        System.out.println(iLoveJava);
 
     }
 
