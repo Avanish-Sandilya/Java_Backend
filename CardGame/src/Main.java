@@ -1,10 +1,25 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.function.BiConsumer;
 
 public class Main {
     public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the number of players");
+        int numberOfPlayers = input.nextInt();
+        var hands = handSupplier(deckSupplier(),numberOfPlayers);
+        HashMap<Integer,ArrayList<String>> playerHands=new HashMap<>();
+
+        if(hands.get(0).get(0).equals("Max 17 players allowed")) {
+            System.out.println("More than 17 players are not allowed");
+        }else{
+            for(int i=0;i<numberOfPlayers;i++){
+                playerHands.put(i,hands.get(i));
+            }
+
+            playerHands.forEach((player,hand)-> System.out.println("Player "+player+"'s hand: "+hand));
+
+        }
 
     }
 
@@ -15,7 +30,7 @@ public class Main {
         String[] value = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
         for(var v :type){
             for(var w:value){
-                deck.add(v +" of "+ w);
+                deck.add(w +" of "+ v);
             }
         }
 
