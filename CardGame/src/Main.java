@@ -58,4 +58,90 @@ public class Main {
         return sol;
     }
 
+    public static int returnWinner(HashMap<Integer,ArrayList<String>> playerHands){
+        int winner=0;
+
+
+
+        return winner;
+    }
+
+    public static int handRank(ArrayList<String> hand) {
+        if (isTrail(hand)) return 6;
+        if (isPureSequence(hand)) return 5;
+        if (isSequence(hand)) return 4;
+        if (isColor(hand)) return 3;
+        if (isPair(hand)) return 2;
+        return 1;
+    }
+
+    public static int cardValue(String card) {
+        String value = card.split(" ")[0];
+        return switch (value) {
+            case "Ace" -> 14;
+            case "King" -> 13;
+            case "Queen" -> 12;
+            case "Jack" -> 11;
+            default -> Integer.parseInt(value);
+        };
+    }
+
+    public static String suitOf(String card) {
+        return card.split(" ")[2];
+    }
+
+    public static boolean isTrail(ArrayList<String> h) {
+        return cardValue(h.get(0)) == cardValue(h.get(1)) &&
+                cardValue(h.get(1)) == cardValue(h.get(2));
+    }
+
+    public static boolean isColor(ArrayList<String> h) {
+        return suitOf(h.get(0)).equals(suitOf(h.get(1))) &&
+                suitOf(h.get(1)).equals(suitOf(h.get(2)));
+    }
+
+    public static boolean isSequence(ArrayList<String> h) {
+        ArrayList<Integer> v = new ArrayList<>();
+        for (var c : h) v.add(cardValue(c));
+        Collections.sort(v);
+
+        if (v.get(0) + 1 == v.get(1) && v.get(1) + 1 == v.get(2)) return true;
+
+        return v.get(0) == 2 && v.get(1) == 3 && v.get(2) == 14;
+    }
+
+    public static boolean isPureSequence(ArrayList<String> h) {
+        return isColor(h) && isSequence(h);
+    }
+
+    public static boolean isPair(ArrayList<String> h) {
+        int a = cardValue(h.get(0));
+        int b = cardValue(h.get(1));
+        int c = cardValue(h.get(2));
+        return a == b || b == c || a == c;
+    }
+
+    public static int compareHands(ArrayList<String> h1, ArrayList<String> h2) {
+        int r1 = handRank(h1);
+        int r2 = handRank(h2);
+
+        if (r1 != r2) return r1 - r2;
+
+        // Same rank, break tie
+        ArrayList<Integer> v1 = new ArrayList<>();
+        ArrayList<Integer> v2 = new ArrayList<>();
+        for (var c : h1) v1.add(cardValue(c));
+        for (var c : h2) v2.add(cardValue(c));
+        Collections.sort(v1);
+        Collections.sort(v2);
+
+        for (int i = 2; i >= 0; i--) {
+            if (!v1.get(i).equals(v2.get(i))) {
+                return v1.get(i) - v2.get(i);
+            }
+        }
+        return 0;
+    }
+
+
 }
