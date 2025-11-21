@@ -20,11 +20,11 @@ public class Main {
             playerHands.forEach((player,hand)-> System.out.println("Player "+(player+1)+"'s hand: "+hand));
 
             int winner = returnWinner(playerHands);
-            if(winner==0){
+            if(winner==-1){
                 System.out.println("There is a tie between two players, They both will have to play again to decide the winner");
 
             }else{
-                System.out.println("Player "+winner+" wins the hand");
+                System.out.println("Player "+(winner+1)+" wins the hand");
             }
 
         }
@@ -69,6 +69,7 @@ public class Main {
     public static int returnWinner(HashMap<Integer,ArrayList<String>> playerHands){
         int winner = -1;
         ArrayList<String> bestHand = null;
+        boolean tie = false;
 
         for (var entry : playerHands.entrySet()) {
             int player = entry.getKey();
@@ -78,15 +79,20 @@ public class Main {
                 bestHand = hand;
                 winner = player;
             } else {
-                if (compareHands(hand, bestHand) > 0) {
+                int cmp = compareHands(hand, bestHand);
+                if (cmp > 0) {
                     bestHand = hand;
                     winner = player;
+                    tie = false;         // reset tie flag
+                } else if (cmp == 0) {
+                    tie = true;          // matching best hand
                 }
             }
         }
 
-        return winner;
+        return tie ? -1 : winner;   // return -1 for tie
     }
+
 
     public static int handRank(ArrayList<String> hand) {
         if (isTrail(hand)) return 6;
