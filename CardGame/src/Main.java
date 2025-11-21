@@ -59,9 +59,23 @@ public class Main {
     }
 
     public static int returnWinner(HashMap<Integer,ArrayList<String>> playerHands){
-        int winner=0;
+        int winner = -1;
+        ArrayList<String> bestHand = null;
 
+        for (var entry : playerHands.entrySet()) {
+            int player = entry.getKey();
+            ArrayList<String> hand = entry.getValue();
 
+            if (bestHand == null) {
+                bestHand = hand;
+                winner = player;
+            } else {
+                if (compareHands(hand, bestHand) > 0) {
+                    bestHand = hand;
+                    winner = player;
+                }
+            }
+        }
 
         return winner;
     }
