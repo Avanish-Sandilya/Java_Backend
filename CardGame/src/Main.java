@@ -17,7 +17,15 @@ public class Main {
                 playerHands.put(i,hands.get(i));
             }
 
-            playerHands.forEach((player,hand)-> System.out.println("Player "+player+"'s hand: "+hand));
+            playerHands.forEach((player,hand)-> System.out.println("Player "+(player+1)+"'s hand: "+hand));
+
+            int winner = returnWinner(playerHands);
+            if(winner==0){
+                System.out.println("There is a tie between two players, They both will have to play again to decide the winner");
+
+            }else{
+                System.out.println("Player "+winner+" wins the hand");
+            }
 
         }
 
