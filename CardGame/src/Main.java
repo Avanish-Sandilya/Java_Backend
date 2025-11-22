@@ -7,38 +7,38 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the number of players");
         int numberOfPlayers = input.nextInt();
-        var hands = handSupplier(deckSupplier(),numberOfPlayers);
-        HashMap<Integer,ArrayList<String>> playerHands=new HashMap<>();
+        var hands = handSupplier(deckSupplier(), numberOfPlayers);
+        HashMap<Integer, ArrayList<String>> playerHands = new HashMap<>();
 
-        if(hands.get(0).get(0).equals("Max 17 players allowed")) {
+        if (hands.get(0).get(0).equals("Max 17 players allowed")) {
             System.out.println("More than 17 players are not allowed");
-        }else{
-            for(int i=0;i<numberOfPlayers;i++){
-                playerHands.put(i,hands.get(i));
+        } else {
+            for (int i = 0; i < numberOfPlayers; i++) {
+                playerHands.put(i, hands.get(i));
             }
 
-            playerHands.forEach((player,hand)-> System.out.println("Player "+(player+1)+"'s hand: "+hand));
+            playerHands.forEach((player, hand) -> System.out.println("Player " + (player + 1) + "'s hand: " + hand));
 
             int winner = returnWinner(playerHands);
-            if(winner==-1){
+            if (winner == -1) {
                 System.out.println("There is a tie between two players, They both will have to play again to decide the winner");
 
-            }else{
-                System.out.println("Player "+(winner+1)+" wins the hand");
+            } else {
+                System.out.println("Player " + (winner + 1) + " wins the hand");
             }
 
         }
 
     }
 
-    public static ArrayList<String> deckSupplier(){
+    public static ArrayList<String> deckSupplier() {
         ArrayList<String> deck = new ArrayList<>();
 
-        String [] type = {"Diamonds","Spades","Clubs","Hearts"};
+        String[] type = {"Diamonds", "Spades", "Clubs", "Hearts"};
         String[] value = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
-        for(var v :type){
-            for(var w:value){
-                deck.add(w +" of "+ v);
+        for (var v : type) {
+            for (var w : value) {
+                deck.add(w + " of " + v);
             }
         }
 
@@ -48,17 +48,17 @@ public class Main {
 
     }
 
-    public static ArrayList<ArrayList<String>> handSupplier(ArrayList<String> shuffledDeck, int numberOfPlayers){
-        if(numberOfPlayers>17){
-            var sol=new ArrayList<ArrayList<String>>();
+    public static ArrayList<ArrayList<String>> handSupplier(ArrayList<String> shuffledDeck, int numberOfPlayers) {
+        if (numberOfPlayers > 17) {
+            var sol = new ArrayList<ArrayList<String>>();
             sol.add(new ArrayList<>(List.of("Max 17 players allowed")));
             return sol;
         }
-        var sol=new ArrayList<ArrayList<String>>();
-        for (int i=0;i<numberOfPlayers;i++){
+        var sol = new ArrayList<ArrayList<String>>();
+        for (int i = 0; i < numberOfPlayers; i++) {
             var hand = new ArrayList<String>();
-            for(int j=0;j<3;j++){
-                String card = shuffledDeck.remove(shuffledDeck.size()-1);
+            for (int j = 0; j < 3; j++) {
+                String card = shuffledDeck.remove(shuffledDeck.size() - 1);
                 hand.add(card);
             }
             sol.add(hand);
@@ -66,7 +66,7 @@ public class Main {
         return sol;
     }
 
-    public static int returnWinner(HashMap<Integer,ArrayList<String>> playerHands){
+    public static int returnWinner(HashMap<Integer, ArrayList<String>> playerHands) {
         int winner = -1;
         ArrayList<String> bestHand = null;
         boolean tie = false;
