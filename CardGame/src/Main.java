@@ -68,6 +68,12 @@ public class Main {
             return sol;
         }
 
+        if(numberOfPlayers<2){
+            var sol = new ArrayList<ArrayList<String>>();
+            sol.add(new ArrayList<>(List.of("Min 2 players are needed")));
+            return sol;
+        }
+
         var sol = new ArrayList<ArrayList<String>>();
 
         // For each player, remove 3 cards from the deck (from the end)
