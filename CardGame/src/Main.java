@@ -16,9 +16,9 @@ public class Main {
         // Check for invalid number of players
         if (hands.get(0).get(0).equals("Max 17 players allowed")) {
             System.out.println("More than 17 players are not allowed");
-        } else if(hands.get(0).get(0).equals("Min 2 players are needed")){
+        } else if (hands.get(0).get(0).equals("Min 2 players are needed")) {
             System.out.println("Min 2 players are needed to play the game");
-        }else{
+        } else {
 
             // Map each player to their respective hand
             for (int i = 0; i < numberOfPlayers; i++) {
@@ -70,7 +70,7 @@ public class Main {
             return sol;
         }
 
-        if(numberOfPlayers<2){
+        if (numberOfPlayers < 2) {
             var sol = new ArrayList<ArrayList<String>>();
             sol.add(new ArrayList<>(List.of("Min 2 players are needed")));
             return sol;
