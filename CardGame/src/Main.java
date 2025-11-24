@@ -7,7 +7,14 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the number of players");
-        int numberOfPlayers = input.nextInt();
+        String numOfPlayers = input.nextLine();
+        int numberOfPlayers = 0;
+        if (numOfPlayers.matches("\\d+")) {
+            numberOfPlayers = Integer.parseInt(numOfPlayers);
+        } else {
+            System.out.println("Only natural numbers between 2 to 17 allowed");
+            System.exit(0);
+        }
 
         // Generate deck and distribute cards to players
         var hands = handSupplier(deckSupplier(), numberOfPlayers);
