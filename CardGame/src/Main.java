@@ -67,6 +67,7 @@ public class Main {
         return deck;
     }
 
+
     // Distributes 3 cards per player and handles condition where >17 players are not allowed
     public static ArrayList<ArrayList<String>> handSupplier(ArrayList<String> shuffledDeck, int numberOfPlayers) {
 
