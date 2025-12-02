@@ -21,5 +21,11 @@ public class Main {
                 .toList();
         nameStartsWithA.forEach(System.out::println);
 
+        System.out.println("=============================================");
+
+        List<Integer> numList2=List.of(11, 22, 33, 44, 55);
+        int sumOfOdds=numList2.stream().filter(num->num%2==1).reduce(0, Integer::sum);
+        System.out.println(sumOfOdds);
+
     }
 }
