@@ -49,7 +49,7 @@ public class Main {
         Product mostExpensive=products.stream().max(Comparator.comparingDouble(p->p.price)).orElse(null);
         System.out.println(mostExpensive);
 
-        Product highestRated=products.stream().max(Comparator.comparingInt(p->p.rating)).orElse(null);
+        Product highestRated=products.stream().max(Comparator.comparingInt((Product p)->p.rating).thenComparingDouble(p->p.price)).orElse(null);
         System.out.println(highestRated);
 
         Product mostValue = products.stream().max(Comparator.comparingDouble(p->p.rating/p.price)).orElse(null);
