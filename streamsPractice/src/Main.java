@@ -12,5 +12,14 @@ public class Main {
 
         squaredEvens.forEach(System.out::println);
 
+        System.out.println("============================================");
+
+        List<String> nameList = List.of("Arjun", "Amit", "Sanya", "Ankita", "Ravi");
+        List<String> nameStartsWithA=nameList.stream().filter(name->name.startsWith("A"))
+                .map(String::toUpperCase)
+                .sorted()
+                .toList();
+        nameStartsWithA.forEach(System.out::println);
+
     }
 }
