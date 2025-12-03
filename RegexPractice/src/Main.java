@@ -44,6 +44,10 @@ public class Main {
 
         System.out.println(m4.matches());  // true
 
+        System.out.println("======================");
+
+        String line = "Hello, what are you doing, hi hi hi.".replaceAll("[^A-Za-z]+"," ").trim();
+        System.out.println(line);
 
     }
 }
