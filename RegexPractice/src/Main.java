@@ -38,6 +38,12 @@ public class Main {
             System.out.println(m3.group());
         }
 
+        System.out.println("===================");
+        Pattern p4 = Pattern.compile("^(?=.*[A-Z])(?=.*\\d)\\S{8,}$");
+        Matcher m4 = p4.matcher("superMan@124");
+
+        System.out.println(m4.matches());  // true
+
 
     }
 }
