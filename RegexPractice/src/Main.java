@@ -17,5 +17,19 @@ public class Main {
 
         System.out.println(matcher1.find());
 
+        System.out.println("=============");
+
+        String text = "Learning Java is fun! #java #codingLife #100DaysOfCode";
+
+        Pattern pattern2 = Pattern.compile("#\\w+");
+        Matcher matcher2 = pattern2.matcher(text);
+
+        while (matcher2.find()){
+            System.out.println(matcher2.group());
+        }
+
+
+
+
     }
 }
