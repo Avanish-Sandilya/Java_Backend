@@ -10,5 +10,12 @@ public class Main {
             System.out.println(matcher.group()); // 29
         }
 
+        System.out.println("=============");
+
+        Pattern p = Pattern.compile("^\\d{6}$");
+        Matcher matcher1=p.matcher("2233445");
+
+        System.out.println(matcher1.find());
+
     }
 }
