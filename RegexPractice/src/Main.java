@@ -28,7 +28,15 @@ public class Main {
             System.out.println(matcher2.group());
         }
 
+        System.out.println("=================");
 
+        String str ="Price: Rs 199, Discount: 10%";
+        Pattern p3 = Pattern.compile("\\d+");
+        Matcher m3 = p3.matcher(str);
+
+        while (m3.find()){
+            System.out.println(m3.group());
+        }
 
 
     }
