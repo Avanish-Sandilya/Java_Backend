@@ -8,5 +8,13 @@ public class Main {
         String text = Files.readString(Path.of("C:/Users/91834/Desktop/test.txt"));
         System.out.println(text);
 
+        System.out.println("==========================");
+
+        Files.writeString(Path.of("C:/Users/91834/Desktop/test.txt"),text+" added to the file");
+
+        System.out.println("===========================");
+
+
+
     }
 }
