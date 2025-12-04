@@ -7,12 +7,16 @@ public class Main {
 
         String text = Files.readString(Path.of("C:/Users/91834/Desktop/test.txt"));
         System.out.println(text);
-
         System.out.println("==========================");
 
-        Files.writeString(Path.of("C:/Users/91834/Desktop/test.txt"),text+" added to the file");
+        //Files.writeString(Path.of("C:/Users/91834/Desktop/test.txt"),text+" added to the file");
+        //System.out.println("===========================");
 
-        System.out.println("===========================");
+//        Files.copy(Path.of("a.txt"), Path.of("b.txt"));
+//        Files.move(Path.of("old.txt"), Path.of("new.txt"));
+//        Files.delete(Path.of("trash.txt"));
+
+
 
 
 
