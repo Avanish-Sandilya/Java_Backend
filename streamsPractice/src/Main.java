@@ -17,7 +17,7 @@ public class Main {
         System.out.println("============================================");
 
         List<String> nameList = List.of("Arjun", "Amit", "Sanya", "Ankita", "Ravi");
-        List<String> nameStartsWithA=nameList.stream().filter(name->name.startsWith("A"))
+        List<String> nameStartsWithA = nameList.stream().filter(name -> name.startsWith("A"))
                 .map(String::toUpperCase)
                 .sorted()
                 .toList();
@@ -25,14 +25,14 @@ public class Main {
 
         System.out.println("=============================================");
 
-        List<Integer> numList2=List.of(11, 22, 33, 44, 55);
-        int sumOfOdds=numList2.stream().filter(num->num%2==1).reduce(0, Integer::sum);
+        List<Integer> numList2 = List.of(11, 22, 33, 44, 55);
+        int sumOfOdds = numList2.stream().filter(num -> num % 2 == 1).reduce(0, Integer::sum);
         System.out.println(sumOfOdds);
 
         System.out.println("===============================================");
 
         String line = "java streams make java code cleaner and java developers happier";
-        int javaCount = (int)Arrays.stream(line.split(" ")).filter(word->word.equalsIgnoreCase("java")).count();
+        int javaCount = (int) Arrays.stream(line.split(" ")).filter(word -> word.equalsIgnoreCase("java")).count();
         System.out.println(javaCount);
 
         System.out.println("===============================================");
@@ -46,13 +46,13 @@ public class Main {
                 new Product("Wireless Mouse", 1299.0, 3)
         );
 
-        Product mostExpensive=products.stream().max(Comparator.comparingDouble(p->p.price)).orElse(null);
+        Product mostExpensive = products.stream().max(Comparator.comparingDouble(p -> p.price)).orElse(null);
         System.out.println(mostExpensive);
 
-        Product highestRated=products.stream().max(Comparator.comparingInt((Product p)->p.rating).thenComparingDouble(p->p.price)).orElse(null);
+        Product highestRated = products.stream().max(Comparator.comparingInt((Product p) -> p.rating).thenComparingDouble(p -> p.price)).orElse(null);
         System.out.println(highestRated);
 
-        Product mostValue = products.stream().max(Comparator.comparingDouble(p->p.rating/p.price)).orElse(null);
+        Product mostValue = products.stream().max(Comparator.comparingDouble(p -> p.rating / p.price)).orElse(null);
         System.out.println(mostValue);
 
     }
