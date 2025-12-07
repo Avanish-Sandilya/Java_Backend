@@ -8,6 +8,8 @@ public class Main {
         currentThread.setName("MainGuy");
         currentThread.setPriority(Thread.MAX_PRIORITY);
         printThreadState(currentThread);
+        CustomThread t = new CustomThread();
+        t.start();
 
     }
 
