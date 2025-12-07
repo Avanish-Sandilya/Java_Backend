@@ -5,6 +5,9 @@ public class Main {
 
         System.out.println(currentThread);
         printThreadState(currentThread);
+        currentThread.setName("MainGuy");
+        currentThread.setPriority(Thread.MAX_PRIORITY);
+        printThreadState(currentThread);
 
     }
 
