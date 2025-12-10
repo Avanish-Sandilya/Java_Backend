@@ -14,6 +14,20 @@ public class Main {
         CustomThread t = new CustomThread();
         t.start();
 
+        Runnable sample = ()->{
+          for(int i=1;i<=3;i++){
+              System.out.println(" 2 ");
+              try{
+                  TimeUnit.MILLISECONDS.sleep(250);
+              }catch (Exception e){
+                  e.printStackTrace();
+              }
+          }
+        };
+
+        Thread sampleThread = new Thread(sample);
+        sampleThread.start();
+
         for(int i=1;i<=3;i++){
             System.out.println(" 0 ");
             try{
