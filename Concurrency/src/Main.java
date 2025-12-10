@@ -1,3 +1,5 @@
+import java.util.concurrent.TimeUnit;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -11,6 +13,16 @@ public class Main {
         printThreadState(currentThread);
         CustomThread t = new CustomThread();
         t.start();
+
+        for(int i=1;i<=3;i++){
+            System.out.println(" 0 ");
+            try{
+                TimeUnit.SECONDS.sleep(1);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
 
     }
 
