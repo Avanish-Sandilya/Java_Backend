@@ -48,6 +48,7 @@ public class Main {
         System.out.println("Thread State: "+thread.getState());
         System.out.println("Thread Group: "+thread.getThreadGroup());
         System.out.println("Thread is alive: "+thread.isAlive());
+        System.out.println(thread.getClass());
         System.out.println("=======================");
     }
 }
