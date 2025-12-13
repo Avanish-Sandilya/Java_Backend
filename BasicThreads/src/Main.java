@@ -15,8 +15,10 @@ public class Main {
                 System.out.print(". ");
                 try{
                     Thread.sleep(500);
+                    System.out.println("A. state = "+Thread.currentThread().getState());
                 }catch (Exception e){
                     System.out.println(tname+" interrupted");
+                    System.out.println("A1. State = "+Thread.currentThread().getState());
                     return;
                 }
             }
@@ -25,13 +27,21 @@ public class Main {
         System.out.println(thread.getName()+" starting");
         thread.start();
 
-        System.out.println("Main thread will continue here");
-
-        try{
-            Thread.sleep(2000);
-        }catch (Exception e){
-            e.printStackTrace();
+        long now =System.currentTimeMillis();
+        while(thread.isAlive()){
+            System.out.println("\n waiting for thread to complete");
+            try{
+                Thread.sleep(1000);
+                System.out.println("B. state = "+thread.getState());
+                if(System.currentTimeMillis()-now>2000){
+                    thread.interrupt();
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
-        thread.interrupt();
+        System.out.println("C. State = "+thread.getState());
+
+
     }
 }
