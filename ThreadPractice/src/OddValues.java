@@ -7,8 +7,13 @@ public class OddValues extends Thread{
                 System.out.println(i);
                 try {
                     Thread.sleep(500);
+
                 } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+                if(i>5){
+                    interrupt();
                 }
             }
         }

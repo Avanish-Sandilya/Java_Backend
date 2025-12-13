@@ -8,7 +8,11 @@ public class EvenValues implements Runnable{
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+                   Thread.currentThread().interrupt();
+                   break;
+                }
+                if(i>=8){
+                    Thread.currentThread().interrupt();
                 }
             }
         }
