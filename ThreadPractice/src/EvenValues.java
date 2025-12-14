@@ -11,9 +11,11 @@ public class EvenValues implements Runnable{
                    Thread.currentThread().interrupt();
                    break;
                 }
+
                 if(i>=8){
                     Thread.currentThread().interrupt();
                 }
+
             }
         }
     }
