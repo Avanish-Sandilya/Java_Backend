@@ -9,4 +9,8 @@ public enum ThreadColor {
     ThreadColor(String color) {
         this.color = color;
     }
+
+    public String color(){
+        return color;
+    }
 }
