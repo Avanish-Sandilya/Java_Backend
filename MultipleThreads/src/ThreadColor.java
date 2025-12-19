@@ -1,4 +1,5 @@
 public enum ThreadColor {
+
     ANSI_RESET("\u001B[0m"),
     ANSI_WHITE("\u001b[37m"),
     ANSI_BLUE("\u001B[34m"),
