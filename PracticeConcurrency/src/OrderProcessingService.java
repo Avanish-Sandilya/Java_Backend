@@ -57,7 +57,6 @@ public class OrderProcessingService {
         }
     }
 
-    // shutdown
     public void shutdown() {
         cpuExecutor.shutdown();
     }
