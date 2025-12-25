@@ -13,6 +13,7 @@ public class OrderProcessingService {
     private final AtomicInteger processedOrders = new AtomicInteger(0);
 
     // Shared state with invariant → needs lock
+
     private final Object lock = new Object();
     private int totalRevenue = 0;
 
