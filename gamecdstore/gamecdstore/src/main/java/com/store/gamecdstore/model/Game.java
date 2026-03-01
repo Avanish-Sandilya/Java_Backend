@@ -14,8 +14,17 @@ public class Game {
 
     private String genre;
 
+    public Game(String title, String genre, Double price, Integer stock) {
+        this.title = title;
+        this.genre = genre;
+        this.price = price;
+        this.stock = stock;
+    }
+
     private Double price;
 
     private Integer stock;
+
+
 
 }
