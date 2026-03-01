@@ -1,4 +1,4 @@
-package com.store.gamecdstore;
+package com.store.gamecdstore.repository;
 
 import com.store.gamecdstore.model.Game;
 import org.springframework.data.jpa.repository.JpaRepository;
