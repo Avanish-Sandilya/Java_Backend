@@ -11,9 +11,10 @@ public class Student {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
     private String name;
     private int age;
-    private List<String> subjects;
+
+    public Student(){}
 
 }
